@@ -1,11 +1,16 @@
 <template name="progress">
 	<div class="col-xs-12 col-sm-6 col-sm-offset-1">
-		Total: {{totalSaved}} <br>
-		Meta: {{currentUser.profile.goal}}
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" aria-valuenow="{{progressNow}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressNow}}%;">
-			{{progressNow}}%
-			</div>
+				<div class="progress-bar" role="progressbar" aria-valuenow="{{progressNow}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressNow}}%;">
+				{{progressNow}}%
+				</div>
+		</div>
+			<div class="well text-center">
+			<h2>Minhas conquistas!</h2>
+			<p>Acumule troféus! A cada nova meta alcançada, um troféu novo será conquistado.</p>
+			<p>Você ainda não tem nenhuma conquista, vá em busca delas!</p>
 		</div>
 	</div>
 </template>
+
+
