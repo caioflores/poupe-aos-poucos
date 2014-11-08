@@ -6,6 +6,17 @@ Router.configure({
 });
 
 //
+//PRIVATE ROUTES
+//
+Router.onBeforeAction(function() {
+	if(!Meteor.user()) {
+		this.render(null);
+	} else {
+		this.next();
+	}
+}, {except: ['index', 'login', 'logout', 'signup']});
+
+//
 //HOME
 //
 Router.route('/', function() {
