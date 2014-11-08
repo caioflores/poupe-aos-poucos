@@ -11,23 +11,11 @@
 </head>
 
 <template name="index">
-	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<a href="" class="navbar-brand"><img src="http://placehold.it/100x30&text=Logo" class="brand" /></a>
-		</div>
-		<div class="collapse navbar-collapse">	
-			<div class="navbar-right navbar-text">
-				<span><img src="http://placehold.it/30x30" class="img-circle" /></span>
-				<span>Olá, Judit!</span>
-			</div>
-		</div>
-	</nav>
+	<header id="app-header">
+		{{> menu}}
+	</header>
+
 	<section id="main">
 		{{> yield}}
 	</section>
-	<footer class="cotainer-fluid bg-primary">
-		<div class="container">
-			<h5 class="text-center">Copyright 2014 - Judit - Todos os direitos reservados</h5>
-		</div>
-	</footer>
 </template>

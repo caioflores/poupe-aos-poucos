@@ -11,4 +11,6 @@ iron:router
 less
 accounts-password
 pfafman:font-awesome-4
+meteorhacks:fast-render
+mrt:moment
 

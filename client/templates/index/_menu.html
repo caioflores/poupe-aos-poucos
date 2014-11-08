@@ -1,0 +1,34 @@
+<template name="menu">
+	<nav id="main-menu" class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+				<a href="{{pathFor 'home'}}" class="navbar-brand visible-xs-block">TOaD</a>
+			</div>
+
+			<div class="navbar-collapse bs-navbar-collapse collapse" role="navigation">
+				<!-- <ul class="nav navbar-nav">
+					{{#if currentUser}}
+						<li><a href="{{pathFor route='xxx'}}">...</a></li>
+					{{/if}}
+				</ul> -->
+
+				
+				<div id="user-menu" class="navbar-right navbar-text">
+					{{#if currentUser}}
+						<span>Olá, {{currentUser.profile.name}}!</span>
+						<span><img src="http://placehold.it/30x30" class="img-circle" /></span>
+					{{else}}
+						<a href="{{pathFor login}}">Login</a>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</nav>
+</template>

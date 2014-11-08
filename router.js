@@ -10,20 +10,53 @@ Router.configure({
 //
 Router.onBeforeAction(function() {
 	if(!Meteor.user()) {
-		this.render(null);
+		//prevent from showing login page on app startup when already logged
+		this.wait(function() {return !Meteor.loggingIn(); });
+
+		if(this.ready()) {
+			this.render('login');
+		} else {
+			this.render(null);
+		}
 	} else {
 		this.next();
 	}
-}, {except: ['index', 'login', 'logout', 'signup']});
+}, {except: ['signup', 'login', 'logout']});
+
+
+//
+//LOGIN & SIGNUP
+//
+Router.route('/login', function() {
+	if(Meteor.userId()) {
+		this.redirect('home');
+	} else {
+		Session.set('isSignup', false);
+		this.render('login');
+	}
+});
+
+Router.route('/logout', function() {
+	Meteor.logout(function() {
+		Router.go('login');
+	});
+});
+
+Router.route('/signup', function() {
+	Session.set('isSignup', true);
+	this.render('login');
+});
 
 //
 //HOME
 //
 Router.route('/', function() {
 	this.render('home');
-});
+}, {name: 'home'});
 
 //
 //SIMULATION
 //
-Router.route('/simulation');
+Router.route('/simulation', function() {
+	this.layout('simulation');
+});
