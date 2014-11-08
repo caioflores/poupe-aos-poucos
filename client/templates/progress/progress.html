@@ -1,0 +1,11 @@
+<template name="progress">
+	<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+		Total: {{totalSaved}} <br>
+		Meta: {{currentUser.profile.goal}}
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="{{progressNow}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressNow}}%;">
+			{{progressNow}}%
+			</div>
+		</div>
+	</div>
+</template>
