@@ -1,14 +1,50 @@
 <template name="progress">
-	<div class="col-xs-12 col-sm-6 col-sm-offset-1">
-		<div class="progress">
-				<div class="progress-bar" role="progressbar" aria-valuenow="{{progressNow}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressNow}}%;">
-				{{progressNow}}%
-				</div>
+	<div class="col-xs-12 col-sm-9">
+		<div class="goal">
+			<span class="goal-name text-primary">Minha viagem dos sonhos</span>
 		</div>
-			<div class="well text-center">
-			<h2>Minhas conquistas!</h2>
-			<p>Acumule troféus! A cada nova meta alcançada, um troféu novo será conquistado.</p>
-			<p>Você ainda não tem nenhuma conquista, vá em busca delas!</p>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="{{progressNow}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressNow}}%;">
+				{{progressNow}}%
+			</div>
+		</div>
+		<div class="meta">
+			<span class="pull-right">
+				<label class="label label-default">Meta:</label> R$ 2.000,00
+			</span>
+			<span class="text-warning">
+				<label class="label label-success">Aplicado:</label> R$ {{totalSaved}},00
+			</span>
+		</div>
+		<div class="badges">
+			<div class="badge-icon pull-left text-center done" data-toggle="tooltip" data-placement="top" data-original-title="Tooltip on left">
+				<p class="fa fa-trophy fa-3x block-center"></p>
+				<p class="text-center">champion</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-shield fa-3x"></p>
+				<p class="text-center">secure</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-tag fa-3x"></p>
+				<p class="text-center">soldier</p>
+			</div>
+			<div class="badge-icon pull-left text-center done">
+				<p class="fa fa-rocket fa-3x"></p>
+				<p class="text-center">u rock</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-thumbs-up fa-3x"></p>
+				<p class="text-center">thumbs for u</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-star fa-3x"></p>
+				<p class="text-center">u're a star</p>
+			</div>
+			<div class="badge-icon pull-left text-center done">
+				<p class="fa fa-heart fa-3x"></p>
+				<p class="text-center">saver lover</p>
+			</div>
 		</div>
 	</div>
 </template>

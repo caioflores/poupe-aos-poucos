@@ -1,42 +1,22 @@
 <template name="home">
-	<section class="container-fluid">
-		<div class="container">
-			<section class="row infos">
-				<div class="col-xs-12 col-sm-6 col-sm-offset-1">
-					<div class="goal">
-						<span><i class="fa fa-plane fa-3x"></i></span>
-						<span class="goal-name">Minha viagem dos sonhos</span>
-					</div>
-					{{> progress }}
-					<div class="badges">
-						<span class="fa fa-trophy fa-3x"></span>
-						<span class="fa fa-trophy fa-3x"></span>
-						<span class="fa fa-trophy fa-3x"></span>
-						<span class="fa fa-trophy fa-3x"></span>
-					</div>
-		  			<div class="well text-center">
-						<h2>Minhas conquistas!</h2>
-						<p>Acumule troféus! A cada nova meta alcançada, um troféu novo será conquistado.</p>
-						<p>Você ainda não tem nenhuma conquista, vá em busca delas!</p>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-sm-offset-1">
-					<div class="thumbnail">
-		      			<img src="http://placehold.it/200x200" alt="..." class="img-circle">
-		      			<div class="caption">
-		        			<h3 class="text-center text-primary">Plano Poupador Master</h3>
-		        			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-		        			<span class="text-left label-default">Taxa: 20%</span>
-		        			<span class="text-rigth label-primary">Meta: {{currentUser.profile.goal}}</span>
-		      			</div>
-		    		</div>
-				</div>
-			</section>
+	<section class="row infos">
+		{{> progress }}
+		<div class="col-xs-12 col-sm-3">
+			<div class="thumbnail">
+    			<div class="text-right">
+    				<p class="label label-primary">Taxa: {{toPercent currentUser.profile.saveFactor}}%</p>
+    			</div>
+      			<img src="http://placehold.it/100x100" alt="..." class="img-circle">
+      			<div class="caption">
+        			<h3 class="text-center text-primary">Sou Conservador</h3>
+        			<p>Dica: você está gastando muito com jogos virtuais.</p>
+<!-- 		        			<span class="text-rigth label-primary">Meta: {{currentUser.profile.goal}}</span>
+-->		      			</div>
+    		</div>
 		</div>
 	</section>
-	<section class="container-fluid bg-warning">
-		<div class="container">
-			{{> transactions}}
-		</div>
-	</section>	
+	<div class="row">
+		{{> transactions}}
+	</div>
 </template>
+

@@ -1,4 +1,5 @@
 Template.progress.helpers({
+	
 	progressNow: function() {
 
 		var transactions = Transactions.find().fetch();
@@ -25,5 +26,7 @@ Template.progress.helpers({
 		
 		return total;
 	},
+
+
 
 });
