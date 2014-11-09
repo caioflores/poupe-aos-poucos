@@ -3,8 +3,8 @@ Template.progress.helpers({
 		var userGoal = Meteor.user().profile.goal.price;
 		var goalSinceDate = Meteor.user().profile.goal.since;
 		var transactionsAfterGoal = Transactions.find({date: {$gte: goalSinceDate}}).fetch();
-		var total = 0;
 
+		var total = 0;
 		for (var i=0; i < transactionsAfterGoal.length; i++)
 			total += transactionsAfterGoal[i].save;
 
@@ -13,10 +13,10 @@ Template.progress.helpers({
 		if (progress >= 100) {
 			swal({
 				title: "Parabéns!", 
-				text: "Sua meta foi alcançada!", 
+				text: "Agora você pode realizar seu sonho!", 
 				type: "success",
 				timer: 3000,
-				confirmButtonColor: "#0F9D58"
+				confirmButtonColor: "#0F9D58",
 			})
 		};
 
@@ -24,12 +24,12 @@ Template.progress.helpers({
 	},
 
 	totalSaved: function() {
+		var goalSinceDate = Meteor.user().profile.goal.since;
+		var transactionsAfterGoal = Transactions.find({date: {$gte: goalSinceDate}}).fetch();
+
 		var total = 0;
-
-		var transactions = Transactions.find().fetch();
-
-		for (var i=0; i < transactions.length; i++)
-			total += transactions[i].save; 
+		for (var i=0; i < transactionsAfterGoal.length; i++)
+			total += transactionsAfterGoal[i].save; 
 		
 		return total;
 	},

@@ -66,6 +66,9 @@ hr {
 	font-size: 24px;
 	line-height: 40px;
 	padding: 0;
+	-webkit-transition: width 2s ease;
+		 -o-transition: width 2s ease;
+		    transition: width 2s ease;
 }
 
 .progress-bar, .label-success, .btn-success {
