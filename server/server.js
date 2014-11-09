@@ -1,6 +1,15 @@
 Meteor.startup(function () {
 	if (Meteor.users.find().count() == 0) {
-		Accounts.createUser({username: "Judit", password: "judit123", profile: {name: "Judit", type: "convervador", saveFactor: 0.10, deadline: new Date("2014/12/01"), goal: 10000}});
+		Accounts.createUser({username: "Judit", password: "judit123", profile: {
+			name: "Judit", 
+			goal: {
+				type: "convervador", 
+				name: "Viagem dos Sonhos Teste",
+				price: 10000,
+				deadline: new Date("2014/12/01"), 
+				saveFactor: 0.10, 
+			}
+		}});
 	}
 	
 	if(Transactions.find().count() == 0) {

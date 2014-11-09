@@ -55,6 +55,11 @@ Router.route('/', function() {
 }, {name: 'home'});
 
 //
+//GOAL
+//
+Router.route('/goal');
+
+//
 //SIMULATION
 //
 Router.route('/simulation', function() {

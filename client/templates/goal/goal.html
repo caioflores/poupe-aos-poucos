@@ -1,0 +1,39 @@
+<template name="goal">
+	<section class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="well">
+				<h2>Meu objetivo</h2>
+
+				<form name="newGoal" role="form">
+					<div class="form-group">
+						<h3>Qual o seu objetivo?</h3>
+						<input type="text" id="goal" name="goal" placeholder="Viagem dos sonhos" class="form-control input-lg" autofocus />
+					</div>
+
+					{{#if goal}}
+						<div class="form-group">
+							<h3>Quanto você precisa economizar?</h3>
+							<div class="input-group">
+								<span class="input-group-addon">R$</span>
+								<input type="number" id="price" name="price" placeholder="1000" class="form-control input-lg" required autofocus />
+							</div>
+						</div>
+
+						{{#if goalPrice}}
+							<div class="form-group">
+								<h3>Existe uma data limite?</h3>
+								<input type="date" id="deadline" name="deadline" class="form-control input-lg" required />
+							</div>
+						{{/if}}
+					{{/if}}
+
+					{{#if canFinish}}
+						<div class="form-group text-right	">
+							<button type="submit" class="btn btn-success">Iniciar economia</button>
+						</div>
+					{{/if}}
+				</form>
+			</div>
+		</div>
+	</section>
+</template>
