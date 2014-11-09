@@ -8,6 +8,16 @@ hr {
 	border-color: rgba(0,0,0,0.05);
 }
 
+@media (max-width: 767px) {
+	.container {
+		margin: 20px;
+	}
+
+	#badges .badge-icon {
+		width: 80px;
+	}
+}
+
 @media (min-width: 1200px) {
 	.container {
 		width: 970px;
@@ -15,7 +25,7 @@ hr {
 }
 
 .bg-warning {
-	background-color: #f44336;
+	background-color: #EB7404;
 }
 
 /*.infos {
@@ -66,9 +76,9 @@ hr {
 	font-size: 24px;
 	line-height: 40px;
 	padding: 0;
-	-webkit-transition: width 2s ease;
-		 -o-transition: width 2s ease;
-		    transition: width 2s ease;
+	-webkit-transition: width 2s ease 1s;
+		 -o-transition: width 2s ease 1s;
+		    transition: width 2s ease 1s;
 }
 
 .progress-bar, .label-success, .btn-success {
@@ -93,7 +103,7 @@ hr {
 	height: 100px;
 }
 #badges .badge-icon.done {
-	color: #f44336;
+	color: #EB7404;
 }
 #badges .badge-icon {
 	padding: 10px;
@@ -138,4 +148,13 @@ hr {
 	display: block;
 	width: 0;
 	z-index: 1;
+}
+
+@-webkit-keyframes newtransaction {
+    30% 	{background-color: #0f9d58;}
+    100% 	{background-color: transparent;}
+} 
+
+#transactions .item:first-child {
+	-webkit-animation: newtransaction 1s ease 1;
 }
