@@ -4,3 +4,8 @@ UI.registerHelper('momentFromNow', function(date) {
 
 	return moment(date).fromNow();
 });
+
+UI.registerHelper('toPercent', function(value) {
+	return value*100;
+});
+

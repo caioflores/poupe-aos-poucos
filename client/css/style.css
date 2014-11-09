@@ -34,21 +34,22 @@ body {
 }
 
 .table thead tr {
-	background-color: #428BCA;
+	background-color: #ddd;
 	color: white;
 }
-.table tbody tr:nth-child(odd){
+/*.table tbody tr:nth-child(odd){
 	background-color: #eee;
 }
 .table tbody tr:nth-child(even){
 	background-color: #ddd;
-}
+}*/
 
 .progress {
 	height: 50px;
+	margin-bottom: 5px;	
 }
 .progress-bar {
-	background-color: #E66804;
+	background-color: #5cb85c;
 	font-size: 30px;
 	padding-top: 15px;
 }
@@ -57,9 +58,18 @@ body {
 	font-size: 20px;
 }
 
-.badges span {
+.badges .badge-icon {
 	color: #eee;
+	width: 100px;
+	height: 100px;
 }
-.badges span:first-child {
+.badges .badge-icon.done {
 	color: #E66804;
+}
+.badges .badge-icon {
+	padding: 10px;
+}
+
+.badges .badge-icon p{
+	margin-bottom: 0;
 }

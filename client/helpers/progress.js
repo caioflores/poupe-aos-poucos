@@ -1,4 +1,5 @@
 Template.progress.helpers({
+	
 	progressNow: function() {
 		var transactions = Transactions.find().fetch();
 		var userGoal = Meteor.user().profile.goal.price;
@@ -22,5 +23,7 @@ Template.progress.helpers({
 		
 		return total;
 	},
+
+
 
 });
