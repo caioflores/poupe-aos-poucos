@@ -1,7 +1,10 @@
 <template name="progress">
-	<div class="col-xs-12 col-sm-9">
+	<section id="progress" class="row">
 		<div class="goal">
-			<span class="goal-name text-primary">{{currentUser.profile.goal.name}}</span>
+			<h1 class="goal-name">
+				<i class="fa fa-star"></i>
+				{{currentUser.profile.goal.name}}
+			</h1>
 		</div>
 		<div class="progress">
 			<div class="progress-bar" role="progressbar" aria-valuenow="{{progressNow}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressNow}}%;">
@@ -9,14 +12,11 @@
 			</div>
 		</div>
 		<div class="meta">
-			<span class="pull-right">
-				<label class="label label-default">Meta:</label> R${{currentUser.profile.goal.price}}
-			</span>
-			<span class="text-warning">
-				<label class="label label-success">Aplicado:</label> R$ {{totalSaved}},00
-			</span>
+			<label class="label label-default pull-left">Aplicado: R${{totalSaved}}</label>
+			<label class="label label-default pull-right">Meta: R${{currentUser.profile.goal.price}}</label>
 		</div>
-		<div class="badges">
+
+		<section id="badges">
 			<div class="badge-icon pull-left text-center done" data-toggle="tooltip" data-placement="top" data-original-title="Tooltip on left">
 				<p class="fa fa-trophy fa-3x block-center"></p>
 				<p class="text-center">champion</p>
@@ -45,8 +45,6 @@
 				<p class="fa fa-heart fa-3x"></p>
 				<p class="text-center">saver lover</p>
 			</div>
-		</div>
-	</div>
+		</section>
+	</section>
 </template>
-
-

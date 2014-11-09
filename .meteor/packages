@@ -6,11 +6,10 @@
 meteor-platform
 autopublish
 insecure
-mizzao:bootstrap-3
 iron:router
 less
 accounts-password
 pfafman:font-awesome-4
 meteorhacks:fast-render
 mrt:moment
-
+mizzao:bootstrap-3

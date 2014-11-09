@@ -1,0 +1,19 @@
+<template name="header">
+	<!-- {{> menu}} -->
+
+	{{#if currentUser}}
+		<section id="manager-bot">
+			<div class="container">
+				<div class="row">
+					<div class="message-box">
+						<img src="/assets/img/gerente-itau-boneco.png" class="avatar"/>
+
+						<div class="baloon-message">
+							<span>Olá, {{currentUser.profile.name}}!</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{{/if}}
+</template>
