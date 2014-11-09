@@ -5,7 +5,8 @@ Template.goal.events({
 		var goal 		= {};
 	    goal.name		= $('[name=goal]').val();
 	    goal.price		= $('[name=price]').val();
-	    goal.deadline	= $('[name=deadline]').val();
+	    goal.since		= new Date();
+	    goal.deadline	= new Date($('[name=deadline]').val());
 	    goal.saveFactor	= 0.10;
 
 	    if(!(goal.name && goal.price && goal.deadline)) return false;
