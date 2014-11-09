@@ -21,7 +21,7 @@ Router.onBeforeAction(function() {
 	} else {
 		this.next();
 	}
-}, {except: ['signup', 'login', 'logout']});
+}, {except: ['signup', 'login', 'logout', 'reset']});
 
 
 //
@@ -64,4 +64,10 @@ Router.route('/goal');
 //
 Router.route('/simulation', function() {
 	this.layout('simulation');
+});
+
+
+Router.route('/reset', function() {
+	Meteor.call('reset');
+	this.redirect('home');
 });

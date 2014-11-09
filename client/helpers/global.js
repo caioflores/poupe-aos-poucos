@@ -15,3 +15,7 @@ UI.registerHelper('momentFormat', function(date, format) {
 UI.registerHelper('toPercent', function(value) {
 	return value*100;
 });
+
+UI.registerHelper('gte', function(a, b) {
+	return a >= b;
+});

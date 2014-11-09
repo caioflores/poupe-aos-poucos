@@ -1,15 +1,10 @@
 Template.progress.helpers({
 	progressNow: function() {
-		var userGoal = Meteor.user().profile.goal.price;
-		var goalSinceDate = Meteor.user().profile.goal.since;
-		var transactionsAfterGoal = Transactions.find({date: {$gte: goalSinceDate}}).fetch();
-
-		var total = 0;
-		for (var i=0; i < transactionsAfterGoal.length; i++)
-			total += transactionsAfterGoal[i].save;
-
-		var progress = (total*100)/userGoal;
-
+		var goal 			= Meteor.user().profile.goal.price;
+		var goalSinceDate 	= Meteor.user().profile.goal.since;
+		var saved 			= Meteor.user().profile.goal.saved;
+		
+		var progress = saved / goal * 100;
 		if (progress >= 100) {
 			swal({
 				title: "Parabéns!", 
@@ -21,16 +16,5 @@ Template.progress.helpers({
 		};
 
 		return Math.round(progress * 100) / 100;
-	},
-
-	totalSaved: function() {
-		var goalSinceDate = Meteor.user().profile.goal.since;
-		var transactionsAfterGoal = Transactions.find({date: {$gte: goalSinceDate}}).fetch();
-
-		var total = 0;
-		for (var i=0; i < transactionsAfterGoal.length; i++)
-			total += transactionsAfterGoal[i].save; 
-		
-		return total;
-	},
+	}
 });

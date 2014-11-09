@@ -8,8 +8,16 @@
 					<div class="message-box">
 						<img src="/assets/img/gerente-itau-boneco.png" class="avatar"/>
 
+						<div class="baloon-message with-arrow">
+							<span>Olá, {{currentUser.profile.name}}! Você está no <strong>Perfil {{currentUser.profile.goal.type}}</strong>, ou seja, aplicando o referente a {{toPercent currentUser.profile.goal.saveFactor}}% de cada transação. <a href="#">Deseja mudar seu perfil?</a></span>
+						</div>
+
 						<div class="baloon-message">
-							<span>Olá, {{currentUser.profile.name}}! Você está no <strong>Perfil {{currentUser.profile.goal.type}}</strong>. <a href="#">Deseja mudar seu perfil?</a></span>
+							{{#if gte currentUser.profile.goal.saved currentUser.profile.goal.price}}
+								<span>Parabéns {{currentUser.profile.name}}! <strong>Você atingiu sua meta! :D</strong></span>
+							{{else}}
+								<span>Neste ritmo, você irá atingir seu objetivo: <strong>hoje!</strong></span>
+							{{/if}}
 						</div>
 					</div>
 				</div>

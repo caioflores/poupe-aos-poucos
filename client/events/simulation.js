@@ -13,7 +13,11 @@ Template.simulation.events({
 				alert(error);
 			} else if(result) {
 				console.log("Compra realizada! Observe o Darshboard na apresentacao");
+
+	    		Meteor.users.update(Meteor.userId(), {$inc: {'profile.goal.saved': data.save}});
+
 				$('form')[0].reset();
+				$('input')[0].focus();
 			}
 		});
 
