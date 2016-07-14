@@ -1,0 +1,24 @@
+<template name="transactions">
+	<section id="transactions" class="row">
+		<h3>Últimas transações</h3>
+		<table class="table table-striped table-hover table-bordered text-center">
+			<thead>
+				<tr>
+					<th class="text-center">Data</th>
+					<th class="text-center">Nome</th>
+					<th class="text-center">Valor</th>
+					<th class="text-center">Aplicado</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each transactions}}
+			      {{> transaction}}
+			    {{/each}}
+			</tbody>
+		</table>
+
+		<section class="text-right">
+			<a href="">Ver todas</a>
+		</section>
+	</section>
+</template>

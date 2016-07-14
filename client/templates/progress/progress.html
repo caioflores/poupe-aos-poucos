@@ -1,0 +1,50 @@
+<template name="progress">
+	<section id="progress" class="row">
+		<div class="goal">
+			<h1 class="goal-name">
+				<i class="fa fa-star"></i>
+				{{currentUser.profile.goal.name}}
+			</h1>
+		</div>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="{{progressNow}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressNow}}%;">
+				{{progressNow}}%
+			</div>
+		</div>
+		<div class="meta">
+			<label class="label label-default pull-left">Aplicado: R${{currentUser.profile.goal.saved}}</label>
+			<label class="label label-default pull-right">Meta: R${{currentUser.profile.goal.price}} até {{momentFormat currentUser.profile.goal.deadline 'll'}}</label>
+		</div>
+
+		<section id="badges">
+			<div class="badge-icon pull-left text-center done">
+				<p class="fa fa-trophy fa-3x block-center"></p>
+				<p class="text-center">champion</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-shield fa-3x"></p>
+				<p class="text-center">secure</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-tag fa-3x"></p>
+				<p class="text-center">soldier</p>
+			</div>
+			<div class="badge-icon pull-left text-center done">
+				<p class="fa fa-rocket fa-3x"></p>
+				<p class="text-center">u rock</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-thumbs-up fa-3x"></p>
+				<p class="text-center">thumbs up</p>
+			</div>
+			<div class="badge-icon pull-left text-center">
+				<p class="fa fa-star fa-3x"></p>
+				<p class="text-center">u're a star</p>
+			</div>
+			<div class="badge-icon pull-left text-center done">
+				<p class="fa fa-heart fa-3x"></p>
+				<p class="text-center">save lover</p>
+			</div>
+		</section>
+	</section>
+</template>
